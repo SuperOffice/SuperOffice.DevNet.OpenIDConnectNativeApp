@@ -46,7 +46,7 @@ namespace SuperOffice.DevNet.OpenIDConnectNativeApp
                 ClientId = "YOUR_APPLICATION_ID",
                 ClientSecret = "YOUR_APPLICATION_TOKEN",
                 Scope = "openid profile api",
-                RedirectUri = "http://localhost:7890/desktop-callback",
+                RedirectUri = redirectUri,
                 ResponseMode = OidcClientOptions.AuthorizeResponseMode.FormPost,
                 Flow = OidcClientOptions.AuthenticationFlow.Hybrid,
             };
