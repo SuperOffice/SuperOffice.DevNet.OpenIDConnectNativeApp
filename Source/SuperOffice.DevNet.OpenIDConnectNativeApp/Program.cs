@@ -35,7 +35,7 @@ namespace SuperOffice.DevNet.OpenIDConnectNativeApp
 
             // create an HttpListener to listen for requests on that redirect URI.
             var http = new HttpListener();
-            http.Prefixes.Add(redirectUri);
+            http.Prefixes.Add(redirectUri + "/");
             Console.WriteLine("Listening..");
             http.Start();
 
