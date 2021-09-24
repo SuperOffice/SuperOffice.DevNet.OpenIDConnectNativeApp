@@ -54,7 +54,7 @@ namespace SuperOffice.DevNet.WebApiClient.Test
                 Authority = _authority,
                 ClientId = _clientId,
                 RedirectUri = redirectUri,
-                Scope = "openid profile api",
+                Scope = "openid",
                 FilterClaims = false,
                 LoadProfile = false,
                 Browser = browser,
@@ -155,14 +155,14 @@ namespace SuperOffice.DevNet.WebApiClient.Test
             };
 
             var systemUserClient = new SuperOffice.WebApi.IdentityModel.SystemUserClient(systemUserInfo);
-            var ticketCredential = systemUserClient.GetSystemUserTicket();
+            var ticketCredential = await systemUserClient.GetSystemUserTicketAsync();
 
             // use the SuperOffice.WebApi Agents to access the Agent web service endpoints
 
             // construct the system user authorization (since client credentials is not yet supported)
 
             var systemUserAuth = new WebApi.AuthorizationSystemUserTicket(systemUserInfo, ticketCredential);
-            var config = new SuperOffice.WebApi.WebApiConfiguration(webapi_url, systemUserAuth);
+            var config = new SuperOffice.WebApi.WebApiOptions(webapi_url, systemUserAuth);
 
             // use the archive agent to perform a search
             // https://community.superoffice.com/documentation/sdk/SO.NetServer.Web.Services/html/Reference-WebAPI-REST-Search.htm
@@ -206,6 +206,12 @@ namespace SuperOffice.DevNet.WebApiClient.Test
 
         private static void WriteToConsole(D.ArchiveListItem[] sales)
         {
+            if(sales == null)
+            {
+                Console.WriteLine("No sales to show...");
+                return;
+            }
+
             foreach (var sale in sales)
             {
                 int saleId = sale.PrimaryKey;
