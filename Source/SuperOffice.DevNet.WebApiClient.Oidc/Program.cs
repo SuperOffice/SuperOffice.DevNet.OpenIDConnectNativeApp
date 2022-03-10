@@ -53,6 +53,7 @@ namespace SuperOffice.DevNet.WebApiClient.Test
             {
                 Authority = _authority,
                 ClientId = _clientId,
+                ClientSecret = _clientSecret,
                 RedirectUri = redirectUri,
                 Scope = "openid",
                 FilterClaims = false,
