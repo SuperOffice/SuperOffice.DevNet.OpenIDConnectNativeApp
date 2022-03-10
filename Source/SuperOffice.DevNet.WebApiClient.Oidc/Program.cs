@@ -53,8 +53,8 @@ namespace SuperOffice.DevNet.WebApiClient.Test
             {
                 Authority = _authority,
                 ClientId = _clientId,
-                ClientSecret = _clientSecret,
-                RedirectUri = redirectUri,
+                ClientSecret = _clientSecret, // Client secret is not used to obtain an Access/Refresh/ID tokens
+                RedirectUri = redirectUri,    //- the client secret is only required when using the refreshToken to get a new access token.
                 Scope = "openid",
                 FilterClaims = false,
                 LoadProfile = false,
