@@ -30,7 +30,7 @@ namespace SuperOffice.DevNet.OpenIDConnectNativeApp
         private async void SignIn()
         {
             // create a redirect URI using an available port on the loopback address.
-            string redirectUri = string.Format("http://127.0.0.1:7890/desktop-callback");
+            string redirectUri = string.Format("http://127.0.0.1:7890");
             Console.WriteLine("redirect URI: " + redirectUri);
 
             // create an HttpListener to listen for requests on that redirect URI.
