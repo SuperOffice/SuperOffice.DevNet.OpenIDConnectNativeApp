@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net80</TargetFramework>
     <AssemblyName>SuperOffice.DevNet.WebApiClient.Oidc</AssemblyName>
     <RootNamespace>SuperOffice.DevNet.WebApiClient.Oidc</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel.OidcClient" Version="3.1.2" />
+    <PackageReference Include="IdentityModel.OidcClient" Version="5.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />

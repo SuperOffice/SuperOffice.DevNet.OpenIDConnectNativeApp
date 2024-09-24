@@ -47,8 +47,6 @@ namespace SuperOffice.DevNet.OpenIDConnectNativeApp
                 ClientSecret = "YOUR_APPLICATION_TOKEN",
                 Scope = "openid profile api",
                 RedirectUri = redirectUri,
-                ResponseMode = OidcClientOptions.AuthorizeResponseMode.FormPost,
-                Flow = OidcClientOptions.AuthenticationFlow.Hybrid,
             };
 
             options.Policy.Discovery.ValidateIssuerName = false;
